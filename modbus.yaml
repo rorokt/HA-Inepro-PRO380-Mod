@@ -214,24 +214,3 @@
       slave: 2
       scan_interval: 60
 
-- name: BAXI LUNA PLATINUM
-  type: serial
-  baudrate: 9600
-  bytesize: 8
-  method: rtu
-  parity: N
-  port: /dev/ttyUSB1
-  stopbits: 1
-  sensors:
-    - name: "Szoba hőmérséklet"
-      unique_id: SZH
-      device_class: temperature
-      state_class: measurement
-      precision: 2
-      address: 0x5002
-      input_type: holding
-      count: 1
-      data_type: float16
-      unit_of_measurement: "°C"
-      slave: 3
-      scan_interval: 60
