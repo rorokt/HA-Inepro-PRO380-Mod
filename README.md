@@ -9,7 +9,6 @@ address: 2
 2. A modbus.yaml fájt be kell másolni a /config könyvtárba
 
 3. Configuration.yaml-be:
-## Fogyasztásmérő Inepro PRO380-MOD
 modbus: !include modbus.yaml
 
 4. reboot
