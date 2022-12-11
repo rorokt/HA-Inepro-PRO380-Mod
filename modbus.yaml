@@ -1,0 +1,237 @@
+- name: PRO380-MOD
+  type: serial
+  baudrate: 9600
+  bytesize: 8
+  method: rtu
+  parity: N
+  port: /dev/ttyUSB0
+  stopbits: 1
+  sensors:
+    - name: "L1 feszültség"
+      unique_id: L1V
+      device_class: voltage
+      state_class: measurement
+      precision: 2
+      address: 0x5002
+      input_type: holding
+      count: 2
+      data_type: float32
+      unit_of_measurement: "V"
+      slave: 2
+      scan_interval: 60
+
+    - name: "L2 feszültség"
+      unique_id: L2V
+      device_class: voltage
+      state_class: measurement
+      precision: 2
+      address: 0x5004
+      input_type: holding
+      count: 2
+      data_type: float32
+      unit_of_measurement: "V"
+      slave: 2
+      scan_interval: 60
+
+    - name: "L3 feszültség"
+      unique_id: L3V
+      device_class: voltage
+      state_class: measurement
+      precision: 2
+      address: 0x5006
+      input_type: holding
+      count: 2
+      data_type: float32
+      unit_of_measurement: "V"
+      slave: 2
+      scan_interval: 60
+
+    - name: "Frekvencia"
+      unique_id: Hz
+      device_class: frequency
+      state_class: measurement
+      precision: 2
+      address: 0x5008
+      input_type: holding
+      count: 2
+      data_type: float32
+      unit_of_measurement: "Hz"
+      slave: 2
+      scan_interval: 60
+
+    - name: "L1 áramerősség"
+      unique_id: L1A
+      device_class: current
+      state_class: measurement
+      precision: 2
+      address: 0x500C
+      input_type: holding
+      count: 2
+      data_type: float32
+      unit_of_measurement: "A"
+      slave: 2
+      scan_interval: 60
+
+    - name: "L2 áramerősség"
+      unique_id: L2A
+      device_class: current
+      state_class: measurement
+      precision: 2
+      address: 0x500E
+      input_type: holding
+      count: 2
+      data_type: float32
+      unit_of_measurement: "A"
+      slave: 2
+      scan_interval: 60
+
+    - name: "L3 áramerősség"
+      unique_id: L3A
+      device_class: current
+      state_class: measurement
+      precision: 2
+      address: 0x5010
+      input_type: holding
+      count: 2
+      data_type: float32
+      unit_of_measurement: "A"
+      slave: 2
+      scan_interval: 60
+
+    - name: "Összes hatásos teljesítmény"
+      unique_id: SZHT
+      device_class: power
+      state_class: measurement
+      precision: 2
+      address: 0x5012
+      input_type: holding
+      count: 2
+      data_type: float32
+      unit_of_measurement: "kW"
+      slave: 2
+      scan_interval: 60
+
+    - name: "Összes meddő teljesítmény"
+      unique_id: SZMT
+      device_class: power
+      state_class: measurement
+      precision: 2
+      address: 0x501A
+      input_type: holding
+      count: 2
+      data_type: float32
+      unit_of_measurement: "kVAr"
+      slave: 2
+      scan_interval: 60
+
+    - name: "Összes látszólagos teljesítmény"
+      unique_id: SZLT
+      device_class: power
+      state_class: measurement
+      precision: 2
+      address: 0x5022
+      input_type: holding
+      count: 2
+      data_type: float32
+      unit_of_measurement: "kVA"
+      slave: 2
+      scan_interval: 60
+
+    - name: "Teljesítménytényező"
+      unique_id: COSFI
+      device_class: power_factor
+      state_class: measurement
+      precision: 2
+      address: 0x502A
+      input_type: holding
+      count: 2
+      data_type: float32
+      slave: 2
+      scan_interval: 60
+
+    - name: "Import hatásos energia"
+      unique_id: IHE
+      device_class: energy
+      state_class: total_increasing
+      precision: 2
+      address: 0x600C
+      input_type: holding
+      count: 2
+      data_type: float32
+      unit_of_measurement: "kWh"
+      slave: 2
+      scan_interval: 60
+
+    - name: "Export hatásos energia"
+      unique_id: EHE
+      device_class: energy
+      state_class: total_increasing
+      precision: 2
+      address: 0x6018
+      input_type: holding
+      count: 2
+      data_type: float32
+      unit_of_measurement: "kWh"
+      slave: 2
+      scan_interval: 60
+
+    - name: "Összes meddő energia"
+      unique_id: SZME
+      device_class: energy
+      state_class: total_increasing
+      precision: 2
+      address: 0x6024
+      input_type: holding
+      count: 2
+      data_type: float32
+      unit_of_measurement: "kVArh"
+      slave: 2
+      scan_interval: 60
+
+    - name: "Import meddő energia"
+      unique_id: IME
+      device_class: energy
+      state_class: total_increasing
+      precision: 2
+      address: 0x6030
+      input_type: holding
+      count: 2
+      data_type: float32
+      unit_of_measurement: "kVArh"
+      slave: 2
+      scan_interval: 60
+
+    - name: "Export meddő energia"
+      unique_id: EME
+      device_class: energy
+      state_class: total_increasing
+      precision: 2
+      address: 0x603C
+      input_type: holding
+      count: 2
+      data_type: float32
+      unit_of_measurement: "kVArh"
+      slave: 2
+      scan_interval: 60
+
+- name: BAXI LUNA PLATINUM
+  type: serial
+  baudrate: 9600
+  bytesize: 8
+  method: rtu
+  parity: N
+  port: /dev/ttyUSB1
+  stopbits: 1
+  sensors:
+    - name: "Szoba hőmérséklet"
+      unique_id: SZH
+      device_class: temperature
+      state_class: measurement
+      precision: 2
+      address: 0x5002
+      input_type: holding
+      count: 1
+      data_type: float16
+      unit_of_measurement: "°C"
+      slave: 3
+      scan_interval: 60
